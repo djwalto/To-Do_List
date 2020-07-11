@@ -20,11 +20,11 @@ taskRouter.get('/', (req, res) => {
 // POST
 taskRouter.post('/', (req, res) => {
   const taskData = req.body;
-  console.log('in post task router', taskData.task);
-  const query = `INSERT INTO "list" ("task")
-    VALUES($1);`;
+  console.log('in post task router', taskData.task, taskData.task_completed);
+  const query = `INSERT INTO "list" ("task", "task_completed")
+    VALUES($1, $2);`;
   pool
-    .query(query, [taskData.task])
+    .query(query, [taskData.task, taskData.task_completed])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.sendStatus(201);

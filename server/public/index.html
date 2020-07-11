@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekend Challenge 3</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link
     href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
     rel="stylesheet"
@@ -37,18 +38,40 @@
         </div>
         </div>
       </div>
+     
+
 
       <div class="container features">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="form-group">
-              <h3 class="feature-title">Enter in your task!</h3>
-              <input
+            <h3 class="feature-title">Enter in your task!</h3>
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+                <input
                 type="text"
                 id="taskIn"
                 value=""
                 placeholder="Task Description"
-              /><button
+                class="form-control"
+              />
+
+              </div>
+
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+              <input
+                type="text"
+                id="completeIn"
+                value=""
+                placeholder="Completed? (Enter NO)"
+                class="form-control"
+              />
+
+                </div>
+            </div>
+            <button
               type="button"
               class="addButton btn btn-outline-secondary btn-sm"
               id="addButton"
@@ -56,7 +79,7 @@
               Add Task
             </button>
             </div>
-
+      
             <img src="styles/cluttered desk.jpeg" class="img-fluid" />
         </br>
     </br>
@@ -80,17 +103,8 @@
                   <th class="data-title">Task Complete?</th>
                   <th class="data-title">Date Completed</th>
                <th></th>
-                </tr>
-                <tr>
-                <td class="data">Take out the trash</td>
-    <td><input type="checkbox" id="completed" name="completed" value="no"></td>
-                <td class="data">7/12/2020</td>
-                
-                <td><button data-id-task="${task.id}" class="js-btn-delete btn btn-outline-secondary btn-sm">
-                    DELETE
-                  </button>
-                </tr>
-              </thead>
+                              </thead>
+                        
               <tbody id="viewTask"></tbody>
             </table>
           </div>
