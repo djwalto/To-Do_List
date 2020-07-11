@@ -55,6 +55,7 @@ taskRouter.put('/:id', (req, res) => {
 // DELETE
 taskRouter.delete('/:id', (req, res) => {
   const id = req.params.id;
+  console.log(id);
   const queryText = `DELETE FROM "list"
     WHERE "id"=$1;`;
   console.log(queryText);
@@ -62,7 +63,7 @@ taskRouter.delete('/:id', (req, res) => {
   pool
     .query(queryText, [id])
     .then((response) => {
-      res.sendStatus(200);
+      res.sendStatus(201);
     })
     .catch((err) => {
       console.log('error in taskrouter delete', err);
