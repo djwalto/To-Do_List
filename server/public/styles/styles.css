@@ -1,0 +1,122 @@
+body {
+  background-color: #e2d2bc;
+}
+
+.header {
+  background-image: url('thenewlady.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.description {
+  left: 50%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+}
+.description h1 {
+  color: #e2d2bc;
+}
+.description p {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.features {
+  margin: 4em auto;
+  padding: 1em;
+  position: relative;
+}
+.feature-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.features img {
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
+}
+
+.features .form-control,
+.features input {
+  border-radius: 0;
+}
+.features .btn {
+  background-color: #9fc1f3;
+  border: 1px solid #333;
+  color: #fff;
+  margin: 10px;
+}
+.features .btn:hover {
+  background-color: #50688d;
+  border: 1px solid #333;
+}
+
+.page-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 60px 0 30px;
+}
+.footer-copyright {
+  color: #666;
+  padding: 40px 0;
+}
+
+.data {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.data-title {
+  color: rgb(12, 11, 11);
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: rgb(94, 91, 91);
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #888484;
+}
+
+tr:nth-child(odd) {
+  background-color: #c4bebe;
+}

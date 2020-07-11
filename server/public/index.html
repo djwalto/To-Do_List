@@ -4,52 +4,104 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekend Challenge 3</title>
-    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link
+    href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/dc14c6aabe.js"
+    crossorigin="anonymous"
+  ></script>
+
+    <link rel="stylesheet" href="styles/bootstrap.css" />
     <script src="vendors/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-  
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <header>
-    <h1>TASK APP</h1>
+  <header class="page-header header container-fluid">
+    <div class="overlay"></div>
   </header>
   <body>
- 
-    <div class="jumbotron jumbotron-fluid">
-    
+   
         <div class="container">
-          
-          <p class="lead"> <img src="" class="icon" />
-           
+          <div class="description">
+            <h1>Welcome to the To-Do-App!</h1>
+            <p>Loremsid sapise cem ullamcorper.</p>
+          </div>
         </div>
       </div>
+
+      <div class="container features">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="form-group">
+              <h3 class="feature-title">Enter in your task!</h3>
+              <input
+                type="text"
+                id="taskIn"
+                value=""
+                placeholder="Task Description"
+              /><button
+              type="button"
+              class="addButton btn btn-outline-secondary btn-sm"
+              id="addButton"
+            >
+              Add Task
+            </button>
+            </div>
+
+            <img src="styles/cluttered desk.jpeg" class="img-fluid" />
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <h3 class="feature-title">Feature Column 2</h3>
+            <img src="styles/lady.png" class="img-fluid" />
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <table>
+              <thead>
+                <tr>
+                  <th class="data-title">Task Description</th>
+                  <th class="data-title">Task Complete?</th>
+                  <th class="data-title">Date Completed</th>
+                </tr>
+                <tr>
+                <td class="data">Take out the trash</td>
+                <td class="data">NO</td>
+                <td class="data">7/12/2020</td>
+                </tr>
+              </thead>
+              <tbody id="viewTask"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer">
       <div class="container">
-      <section id="addTask">
-        <h2>Add Task</h2>
-        
-        
-        <input type="text" id="taskIn" value="" placeholder="Task Description">
-        
-
-       
-        <button type="button" class="addButton btn btn-outline-secondary btn-sm" id="addButton">Add Task</button>
-      
-    </section>
-      <section>
-        <h2>All Tasks</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Task Description</th>
-              <th>Task Complete?</th>
-              <th>Date Completed</th>
-            </tr>
-          </thead>
-          <tbody id="viewTask">
-          </tbody>
-        </table>
-      </section>
-
-
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">
+              Additional Information
+            </h6>
+            <p>Weekend App Is Awesome!</p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>
+              1640 Riverside Drive, Hill Valley, California
+            </p>
+          </div>
+        </div>
+        <div class="footer-copyright text-center">
+          © 2020 Copyright: WeekendToDoApp.com
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,13 +1,10 @@
 const express = require('express');
-const { Router } = require('express');
 const taskRouter = express.Router();
-
-const pg = require('pg');
 const pool = require('../modules/pool');
-const Pool = pg.Pool;
 
 // GET
 taskRouter.get('/', (req, res) => {
+  console.log('in the get route');
   const queryText = `SELECT * FROM "tasks" ORDER BY "id" DESC;`;
   pool
     .query(queryText)
@@ -16,34 +13,33 @@ taskRouter.get('/', (req, res) => {
       res.send(dbResponse.rows);
     })
     .catch((error) => {
-      console.log(error);
+      console.log('error making get', error);
+      res.sendStatus(500);
     });
 });
 // POST
 taskRouter.post('/', (req, res) => {
   const taskData = req.body;
-  console.log('in post task router');
-  const queryText = `INSERT INTO "tasks" ("task", "task_completed", "date_completed")
-    VALUES($1, $2, $3);`;
+  console.log('in post task router', taskData.task);
+  const query = `INSERT INTO "list" ("task")
+    VALUES($1);`;
   pool
-    .query(queryText, [
-      taskData.task,
-      taskData.task_completed,
-      taskData.date_completed,
-    ])
+    .query(query, [taskData.task])
     .then((dbResponse) => {
+      console.log(dbResponse);
       res.sendStatus(201);
     })
     .catch((error) => {
       console.log('Error with POST', error);
+      res.sendStatus(500);
     });
 });
 
 // PUT
-taskRouter.put('task/:id', (req, res) => {
+taskRouter.put('/:id', (req, res) => {
   const id = req.params.id;
   const taskData = req.body;
-  const queryText = `UPDATE "task" SET "task" = $1 "id"= $2;`;
+  const queryText = `UPDATE "list" SET "task" = $1 "id"= $2;`;
 
   pool
     .query(queryText, [taskData.task, id])
@@ -59,7 +55,7 @@ taskRouter.put('task/:id', (req, res) => {
 // DELETE
 taskRouter.delete('/:id', (req, res) => {
   const id = req.params.id;
-  const queryText = `DELETE FROM "tasks"
+  const queryText = `DELETE FROM "list"
     WHERE "id"=$1;`;
   console.log(queryText);
 
