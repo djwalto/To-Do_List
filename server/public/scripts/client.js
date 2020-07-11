@@ -1,5 +1,3 @@
-// const { default: swal } = require('sweetalert');
-
 console.log('js');
 
 $(document).ready(function () {
@@ -11,35 +9,17 @@ $(document).ready(function () {
   $('#viewTask').on('click', '#completed', changeStatus);
 });
 
-function changeStatus() {}
-
 function changeClass() {
   console.log('YES!');
-  updateTask();
   $(this).parent().toggleClass('greenClass');
 }
 
-function editTask() {
-  console.log('in Edit');
-  const $newStatus = $(this)
-    .parent()
-    .siblings('.data')
-    .children('.js-new-status');
-  console.log($newStatus);
-  if ($newCost.length > 0) {
-    const id = $(this).data('idTask');
-    const newStatus = $newCost.val();
-    console.log(newStatus);
-    updateShoe(id, newStatus);
-    return;
-  }
-  $(this).parent().siblings('.data');
-  $(this).text('Updated');
-}
+function changeStatus() {
+  const id = $(this).data('idTask');
 
-function updateTask(id, newStatus) {
-  console.log('new status alert for', id);
-  console.log('new status:', newStatus);
+  const newStatus = $(this).data('task');
+
+  console.log(id);
   $.ajax({
     type: 'PUT',
     url: `/list/task_completed/${id}`,
@@ -52,7 +32,6 @@ function updateTask(id, newStatus) {
     })
     .catch((err) => {
       console.log('err: ', err);
-      alert('OH NO!!!');
     });
 }
 
@@ -71,13 +50,13 @@ function clickDeleteTask() {
     dangerMode: true,
   }).then((willDelete) => {
     if (willDelete) {
-      swal('Poof! Your file has been deleted!', {
+      swal('Poof! Your task has been deleted!', {
         icon: 'success',
       });
       const id = $(this).data('idTask');
       deleteTask(id);
     } else {
-      swal('Your imaginary file is safe!');
+      swal('Your task is safe!');
       return;
     }
   });
@@ -165,7 +144,7 @@ function render(tasks) {
     $('#viewTask').append(`
     <tr class="taskRow">
     <td data-task class="data">${newTask.task}</td>
-    <td><input type="checkbox" data-task-each id="completed" name="completed" class="js-new-status" value="no"></td>
+    <td><input type="checkbox" data-each id="completed" name="completed" class="js-new-status" value="no"></td>
     <td class="data">Date Completed</td>
     <td><button data-id-task="${newTask.id}" class="js-btn-delete">
         DELETE

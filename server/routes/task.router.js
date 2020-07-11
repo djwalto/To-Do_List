@@ -35,22 +35,40 @@ taskRouter.post('/', (req, res) => {
     });
 });
 
-// PUT
 taskRouter.put('/:id', (req, res) => {
   const id = req.params.id;
-  const taskData = req.body;
-  const queryText = `UPDATE "list" SET "task" = $1 "id"= $2;`;
+  console.log(id);
+  const queryText = `UPDATE "list" SET "task_complete" = $1;`;
+
+  console.log(queryText);
 
   pool
-    .query(queryText, [taskData.task, id])
+    .query(queryText, [id])
     .then((response) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log('error', err);
+      console.log('error in taskrouter put', err);
       res.sendStatus(500);
     });
 });
+
+// PUT
+// taskRouter.put('/task_complete/:id', (req, res) => {
+//   const id = req.params.id;
+//   const taskData = req.body;
+//   const queryText = `UPDATE "list" SET "task" = $1 "id"= $2 "task_complete"= $3;`;
+
+//   pool
+//     .query(queryText, [taskData.task, id, taskData.task_complete])
+//     .then((response) => {
+//       res.sendStatus(201);
+//     })
+//     .catch((err) => {
+//       console.log('error', err);
+//       res.sendStatus(500);
+//     });
+// });
 
 // DELETE
 taskRouter.delete('/:id', (req, res) => {
