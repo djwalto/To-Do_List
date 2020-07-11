@@ -29,9 +29,12 @@
    
         <div class="container">
           <div class="description">
-            <h1>Welcome to the To-Do-App!</h1>
-            <p>Loremsid sapise cem ullamcorper.</p>
-          </div>
+            <h1>Welcome to the To-Do-App</h1>
+    
+            <p class ="lead">Let us help you get organized  
+            </br>
+            Enter in your to-do's and lets get started</p>
+        </div>
         </div>
       </div>
 
@@ -55,11 +58,18 @@
             </div>
 
             <img src="styles/cluttered desk.jpeg" class="img-fluid" />
+        </br>
+    </br>
+            <img src="styles/officedesk.jpeg" class="img-fluid" />
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Feature Column 2</h3>
+            <h3 class="feature-title">Let us do the work</h3>
             <img src="styles/lady.png" class="img-fluid" />
+          </br>
+          <img src="styles/handpen.jpg" class="img-fluid" />
+        </br>
+        <img src="styles/finisheddesk.jpg" class="img-fluid" />
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12">
@@ -69,11 +79,16 @@
                   <th class="data-title">Task Description</th>
                   <th class="data-title">Task Complete?</th>
                   <th class="data-title">Date Completed</th>
+               <th></th>
                 </tr>
                 <tr>
                 <td class="data">Take out the trash</td>
-                <td class="data">NO</td>
+    <td><input type="checkbox" id="completed" name="completed" value="no"></td>
                 <td class="data">7/12/2020</td>
+                
+                <td><button data-id-task="${task.id}" class="js-btn-delete btn btn-outline-secondary btn-sm">
+                    DELETE
+                  </button>
                 </tr>
               </thead>
               <tbody id="viewTask"></tbody>

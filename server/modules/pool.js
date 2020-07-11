@@ -3,7 +3,7 @@ const Pool = pg.Pool;
 const config = {
   database: 'weekend-to-do-app', // name of database
   host: 'localhost',
-  port: 5000,
+  port: 5432,
   max: 10, // max number of concurrent connections
   idleTimeoutMillis: 10000, // attepmt to connect for 10 seconds
 };
