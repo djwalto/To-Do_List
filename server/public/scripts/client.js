@@ -6,34 +6,90 @@ $(document).ready(function () {
   $('.header').height($(window).height());
   $('#viewTask').on('click', '.js-btn-delete', clickDeleteTask);
   $('#viewTask').on('click', '#completed', changeClass);
-  $('#viewTask').on('click', '#completed', changeStatus);
+  $('#viewTask').on('click', '.js-status', clickedCompleteTask);
 });
+
+function clickedCompleteTask() {
+  console.log('in clickedCompleteTask');
+  const statusNow = $(this).siblings('idTask').data('idTask');
+  console.log(statusNow);
+  const id = $(this).data('status');
+  console.log(id);
+  changeStatus(id);
+}
+
+function completeTask(id, statusNow) {
+  $.ajax({
+    type: 'PUT',
+    url: `/api/list/${id}`,
+    data: {
+      statusNow,
+    },
+  });
+}
+
+function updateRender(tasks) {
+  for (let task of tasks) {
+    const $row = $('#viewTask').children(`.${task.task_completed}`);
+    const rowStatus = $row.data('task_completed');
+    if (rowStatus === yes) {
+      $row.addClass('greenClass');
+    }
+  }
+}
 
 function changeClass() {
   console.log('YES!');
   $(this).parent().toggleClass('greenClass');
 }
 
-function changeStatus() {
-  const id = $(this).data('idTask');
-
-  const newStatus = $(this).data('task');
-
-  console.log(id);
+function changeStatus(id) {
   $.ajax({
     type: 'PUT',
-    url: `/list/task_completed/${id}`,
-    data: {
-      newStatus,
-    },
+    url: `/list/${id}`,
   })
     .then((response) => {
-      getTask();
+      console.log('in then statement');
     })
     .catch((err) => {
       console.log('err: ', err);
     });
 }
+
+// function clickEditRank() {
+//     console.log('EDIT RANK');
+//     const $newRank = $(this).parent()
+//       .siblings('.js-rank')
+
+//     if ($newRank.length > 0) {
+//       const id = $(this).data('idSong');
+//       const newRankValue = $newRank.val();
+//       updateRank(id, newRankValue);
+//       return;
+//     }
+
+//     $(this).parent()
+//     $(this).text('SAVE');
+//   }
+
+// function updateRank(id, rank) {
+//     console.log('RANK SAVE - id:', id);
+//     console.log('RANK SAVE - rank:', rank);
+//     $.ajax({
+//       type: 'PUT',
+//       url: `/api/music/rank/${id}`,
+//       data: {
+//         rank
+//       }
+//     })
+//     .then((response) => {
+//       getMusicData();
+//     })
+//     .catch((err) => {
+//       console.log('err: ', err);
+//       alert('Stuff broke!!!');
+//     });
+//   }
 
 function makeGreenRow() {
   console.log('in makegreeenrow');
@@ -144,8 +200,8 @@ function render(tasks) {
     $('#viewTask').append(`
     <tr class="taskRow">
     <td data-task class="data">${newTask.task}</td>
-    <td><input type="checkbox" data-each id="completed" name="completed" class="js-new-status" value="no"></td>
-    <td class="data">Date Completed</td>
+    <td><input type="checkbox" data-status="${newTask.id}" id="completed" name="completed" class="js-status" value="no"></td>
+    <td class="data"></td>
     <td><button data-id-task="${newTask.id}" class="js-btn-delete">
         DELETE
       </button>

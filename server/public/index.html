@@ -8,45 +8,41 @@
     <link
     href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
     rel="stylesheet"
-  />
-  <link
+    />
+    <link
     href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
     rel="stylesheet"
-  />
-  <script
+    />
+    <script
     src="https://kit.fontawesome.com/dc14c6aabe.js"
     crossorigin="anonymous"
-  ></script>
-
+    ></script>
     <link rel="stylesheet" href="styles/bootstrap.css" />
     <script src="vendors/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <header class="page-header header container-fluid">
-    <div class="overlay"></div>
-  </header>
   <body>
-   
-        <div class="container">
-          <div class="description">
-            <h1>Welcome to the To-Do-App</h1>
-    
+    <header class="page-header header container-fluid">
+      <div class="overlay"></div>
+    </header>
+    <div class="container">
+      <div class="description">
+        <h1>Welcome to the <br>
+            Weekend-To-Do-App</h1>
             <p class ="lead">Let us help you get organized  
             </br>
             Enter in your to-do's and lets get started</p>
-        </div>
-        </div>
       </div>
-
-
+    </div>
+    </div>
       <div class="container features">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Enter in your task!</h3>
-            <div class="input-group input-group-lg">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg"></span>
                 <input
                 type="text"
                 id="taskIn"
@@ -54,46 +50,39 @@
                 placeholder="Task Description"
                 class="form-control"
               />
-
+            </div>
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+                  <input
+                  type="text"
+                  id="completeIn"
+                  value=""
+                  placeholder="Completed? (Enter NO)"
+                  class="form-control"
+                  />
               </div>
-
-              <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"></span>
-              <input
-                type="text"
-                id="completeIn"
-                value=""
-                placeholder="Completed? (Enter NO)"
-                class="form-control"
-              />
-
-                </div>
             </div>
             <button
               type="button"
               class="addButton btn btn-outline-secondary btn-sm"
-              id="addButton"
-            >
+              id="addButton">
               Add Task
             </button>
             </div>
-      
-            <img src="styles/cluttered desk.jpeg" class="img-fluid" />
-        </br>
-    </br>
-            <img src="styles/officedesk.jpeg" class="img-fluid" />
-          </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Let us do the work</h3>
-            <img src="styles/lady.png" class="img-fluid" />
-          </br>
-          <img src="styles/handpen.jpg" class="img-fluid" />
-        </br>
-        <img src="styles/finisheddesk.jpg" class="img-fluid" />
-          </div>
-
+             <img src="styles/cluttered desk.jpeg" class="img-fluid" />
+              </br>
+              </br>
+             <img src="styles/officedesk.jpeg" class="img-fluid" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <h3 class="feature-title">Let us do the work</h3>
+              <img src="styles/lady.png" class="img-fluid" />
+              </br>
+              <img src="styles/handpen.jpg" class="img-fluid" />
+              </br>
+              <img src="styles/finisheddesk.jpg" class="img-fluid" />
+            </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <table>
               <thead>
@@ -101,9 +90,9 @@
                   <th class="data-title">Task Description</th>
                   <th class="data-title">Task Complete?</th>
                   <th class="data-title">Date Completed</th>
-               <th></th>
-                              </thead>
-                        
+                  <th></th>
+                </tr>
+              </thead>
               <tbody id="viewTask"></tbody>
             </table>
           </div>
@@ -121,9 +110,9 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12">
             <h6 class="text-uppercase font-weight-bold">Contact</h6>
-            <p>
-              1640 Riverside Drive, Hill Valley, California
-            </p>
+              <p>
+                1640 Riverside Drive, Hill Valley, California
+              </p>
           </div>
         </div>
         <div class="footer-copyright text-center">

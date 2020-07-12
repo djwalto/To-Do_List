@@ -37,14 +37,16 @@ taskRouter.post('/', (req, res) => {
 
 taskRouter.put('/:id', (req, res) => {
   const id = req.params.id;
+  const taskData = req.body;
   console.log(id);
-  const queryText = `UPDATE "list" SET "task_complete" = $1;`;
+  const queryText = `UPDATE "list" SET "task_completed" = $1 WHERE "id" = $2;`;
 
   console.log(queryText);
 
   pool
-    .query(queryText, [id])
+    .query(queryText, ['YES', id])
     .then((response) => {
+      console.log('in taskRouterPut then', response);
       res.sendStatus(201);
     })
     .catch((err) => {
