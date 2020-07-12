@@ -16,7 +16,6 @@ function clickedCompleteTask() {
   const id = $(this).data('status');
   console.log(id);
   changeStatus(id);
-  updateRender(tasks);
 }
 
 function completeTask(id, statusNow) {
@@ -27,19 +26,6 @@ function completeTask(id, statusNow) {
       statusNow,
     },
   });
-}
-
-function updateRender(tasks) {
-  for (let task of tasks) {
-    const $row = $('#viewTask').children(
-      `.${task.task}${task.task_completed}${task.date_completed}`
-    );
-    const rowStatus = $row.data('status');
-    console.log(rowStatus);
-    if (rowStatus === yes) {
-      $row.addClass('greenClass');
-    }
-  }
 }
 
 function changeClass() {
@@ -114,12 +100,6 @@ function deleteTask(id) {
     });
 }
 
-function newTime() {
-  console.log('in new Time');
-  let timeStamp = getTime();
-  console.log(timeStamp);
-}
-
 function setupClickListeners() {
   getTask();
   $('#addButton').on('click', function () {
@@ -190,3 +170,9 @@ function render(tasks) {
     `);
   }
 }
+
+// function newTime() {
+//   console.log('in new Time');
+//   let timeStamp = getTime();
+//   console.log(timeStamp);
+// }

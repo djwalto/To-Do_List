@@ -7,10 +7,8 @@ const taskRouter = require('./routes/task.router');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
-// ROUTES
 app.use('/list', taskRouter);
 
-// Start listening for requests on a specific port
 app.listen(PORT, () => {
   console.log('listening on port', PORT);
 });
