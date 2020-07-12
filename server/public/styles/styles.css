@@ -1,5 +1,7 @@
 body {
-  background-color: #e2d2bc;
+  background-color: #ececec;
+  align-items: center;
+  text-align: center;
 }
 
 .header {
@@ -32,7 +34,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
-.description p {
+
+p {
   color: #fff;
   font-size: 1.3rem;
   line-height: 1.5;
@@ -64,15 +67,23 @@ body {
 .features input {
   border-radius: 0;
 }
-.features .btn {
+.addButton {
   background-color: #48da34;
   border: 1px solid #333;
   color: #fff;
   margin: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
-.features .btn:hover {
+.addButton:hover {
   background-color: #1d7910;
   border: 1px solid #333;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 
 .page-footer {
@@ -86,7 +97,7 @@ body {
 }
 
 .data {
-  color: white;
+  color: rgb(8, 7, 7);
   font-size: 20px;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
@@ -95,7 +106,7 @@ body {
 
 .data-title {
   color: rgb(12, 11, 11);
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -103,25 +114,30 @@ body {
 
 h3 {
   color: rgb(94, 91, 91);
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
 
+.jumbotron {
+  align-self: center;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
+  position: center;
 }
 
 th,
 td {
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #888484;
+  background-color: #979393;
 }
 
 tr:nth-child(odd) {
@@ -132,13 +148,21 @@ tr:nth-child(odd) {
   background-color: red;
   color: white;
   border-radius: 6px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 
 .js-btn-delete:hover {
-  background-color: rgb(112, 4, 4);
+  background-color: rgb(171, 16, 16);
   color: white;
   border-radius: 6px;
   border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 
 .greenClass {
@@ -166,4 +190,40 @@ tr:nth-child(odd) {
   .features {
     margin: 0;
   }
+}
+
+.container-fluid {
+  object-position: center;
+}
+
+.container {
+  position: center;
+}
+
+.display-4 {
+  color: rgb(12, 11, 11);
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  line-height: 2.8;
+}
+
+.input-group-prepend {
+  margin: 10px;
+}
+
+.form-control {
+  color: rgb(12, 11, 11);
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.feature-title {
+  font-size: 30px;
+  font-weight: lighter;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }

@@ -30,65 +30,78 @@
       <div class="description">
         <h1>Welcome to the <br>
             Weekend-To-Do-App</h1>
-            <p class ="lead">Let us help you get organized  
-            </br>
-            Enter in your to-do's and lets get started</p>
+ 
       </div>
     </div>
     </div>
-      <div class="container features">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <h3 class="feature-title">Enter in your task!</h3>
-          <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg"></span>
-                <input
-                type="text"
-                id="taskIn"
-                value=""
-                placeholder="Task Description"
-                class="form-control"
-              />
-            </div>
-            <div class="input-group input-group-lg">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Let us help you get organized</h1>
+        </br>
+        <div class="container features">
+         
+              <h3 class="feature-title">Enter in your to-do's and lets get started</h3>
+            
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-lg"></span>
                   <input
                   type="text"
-                  id="completeIn"
+                  id="taskIn"
                   value=""
-                  placeholder="Completed? (Enter NO)"
+                  placeholder="Task Description"
                   class="form-control"
-                  />
+                />
               </div>
+          
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+                    <input
+                    type="text"
+                    id="completeIn"
+                    value=""
+                    placeholder="Completed? (Enter NO)"
+                    class="form-control"
+                    />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="addButton btn btn-outline-secondary btn-lrg"
+                id="addButton">
+                Add Task
+              </button>
+              </div>
+      
+      
             </div>
-            <button
-              type="button"
-              class="addButton btn btn-outline-secondary btn-sm"
-              id="addButton">
-              Add Task
-            </button>
-            </div>
-             <img src="styles/cluttered desk.jpeg" class="img-fluid" />
+        </div>
+      </div>
+
+   
+
+
+
+      
               </br>
               </br>
-             <img src="styles/officedesk.jpeg" class="img-fluid" />
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+         <div class = "container-fluid">
+          
               <h3 class="feature-title">Let us do the work</h3>
               <img src="styles/lady.png" class="img-fluid" />
               </br>
-              <img src="styles/handpen.jpg" class="img-fluid" />
               </br>
-              <img src="styles/finisheddesk.jpg" class="img-fluid" />
             </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
+         
+            <div class="container features">
+         
+              <h3 class="feature-title">Complete your task or remove below</h3>
+            
             <table>
               <thead>
                 <tr>
                   <th class="data-title">Task Description</th>
-                  <th class="data-title">Task Complete?</th>
+                  <th class="data-title">Task Complete</th>
                   <th class="data-title">Date Completed</th>
                   <th></th>
                 </tr>
@@ -96,9 +109,8 @@
               <tbody id="viewTask"></tbody>
             </table>
           </div>
-        </div>
       </div>
-    </div>
+      </div>
     <footer class="page-footer">
       <div class="container">
         <div class="row">

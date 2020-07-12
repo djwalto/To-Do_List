@@ -16,6 +16,7 @@ function clickedCompleteTask() {
   const id = $(this).data('status');
   console.log(id);
   changeStatus(id);
+  updateRender(tasks);
 }
 
 function completeTask(id, statusNow) {
@@ -30,8 +31,11 @@ function completeTask(id, statusNow) {
 
 function updateRender(tasks) {
   for (let task of tasks) {
-    const $row = $('#viewTask').children(`.${task.task_completed}`);
-    const rowStatus = $row.data('task_completed');
+    const $row = $('#viewTask').children(
+      `.${task.task}${task.task_completed}${task.date_completed}`
+    );
+    const rowStatus = $row.data('status');
+    console.log(rowStatus);
     if (rowStatus === yes) {
       $row.addClass('greenClass');
     }
@@ -41,6 +45,7 @@ function updateRender(tasks) {
 function changeClass() {
   console.log('YES!');
   $(this).parent().toggleClass('greenClass');
+  $(this).parent().siblings().toggleClass('greenClass');
 }
 
 function changeStatus(id) {
@@ -56,40 +61,16 @@ function changeStatus(id) {
     });
 }
 
-// function clickEditRank() {
-//     console.log('EDIT RANK');
-//     const $newRank = $(this).parent()
-//       .siblings('.js-rank')
-
-//     if ($newRank.length > 0) {
-//       const id = $(this).data('idSong');
-//       const newRankValue = $newRank.val();
-//       updateRank(id, newRankValue);
-//       return;
-//     }
-
-//     $(this).parent()
-//     $(this).text('SAVE');
-//   }
-
-// function updateRank(id, rank) {
-//     console.log('RANK SAVE - id:', id);
-//     console.log('RANK SAVE - rank:', rank);
-//     $.ajax({
-//       type: 'PUT',
-//       url: `/api/music/rank/${id}`,
-//       data: {
-//         rank
-//       }
-//     })
-//     .then((response) => {
-//       getMusicData();
-//     })
-//     .catch((err) => {
-//       console.log('err: ', err);
-//       alert('Stuff broke!!!');
-//     });
-//   }
+function updateRender(tasks) {
+  console.log('in updateRender', tasks);
+  for (let task of tasks) {
+    const $row = $('#').children(`.${task.task}`);
+    const rowStatus = $row.data('status');
+    if (rowStatus === true) {
+      $row.addClass('green');
+    }
+  }
+}
 
 function makeGreenRow() {
   console.log('in makegreeenrow');
@@ -200,7 +181,7 @@ function render(tasks) {
     $('#viewTask').append(`
     <tr class="taskRow">
     <td data-task class="data">${newTask.task}</td>
-    <td><input type="checkbox" data-status="${newTask.id}" id="completed" name="completed" class="js-status" value="no"></td>
+    <td><input type="checkbox" data-status="${newTask.id}" id="completed" name="completed" class="js-status" value="true"></td>
     <td class="data"></td>
     <td><button data-id-task="${newTask.id}" class="js-btn-delete">
         DELETE
